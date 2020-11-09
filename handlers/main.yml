@@ -1,0 +1,12 @@
+---
+- name: restart hb
+  become: yes
+  become_user: "{{hb_user}}"
+  service:
+    name: hb
+    state: restarted
+
+- name: reload systemd
+  become: yes
+  become_user: root
+  command: systemctl daemon-reload

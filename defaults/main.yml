@@ -1,0 +1,17 @@
+---
+
+hb_user: "hb"
+hb_group: "hb"
+
+hb_system_prefix: "/usr/local"
+hb_prefix: "{{ hb_system_prefix }}/homebridge"
+hb_conf_dir: "{{ hb_prefix }}/etc/"
+# May not need
+hb_system_conf_dir: "{{ hb_system_prefix }}/etc/"
+hb_env_file: "{{ hb_prefix }}/envfile.conf"
+podman_path: "/usr/local/bin/podman"
+systemd_dir: "/etc/systemd/system"
+
+#podman run --name=hb  --env-file=envfile -v {{hb_conf_dir}}/:/etc/hb/:z -v {{hb_system_dnsmasq}}:/etc/dnsmasq.d/:z --network=host hb/hb:latest
+## Userspace someday with new podman
+##podman run --name=pi-hole --env-file=envfile -v ./etc-hb/:/etc/hb/:z -v ./etc-dnsmasq.d/:/etc/dnsmasq.d/:z -p ${PIFACE}:1053:53/tcp -p ${PIFACE}:1053:53/udp -p ${PIFACE}:1067:67/tcp -p ${PIFACE}:8001:80 -p ${PIFACE}:1080:80/tcp -p ${PIFACE}:8002:443/tcp -p ${PIFACE}:1443:443/tcp --cidfile %t/container-hb.ctr-id --cgroups=no-conmon nickjlange/njl-pi-hole

@@ -1,0 +1,36 @@
+{
+    "bridge": {
+        "name": "Homebridge B181 - {{ansible_hostname}}",
+        "username": "0E:69:92:CA:B1:81",
+        "port": 51827,
+        "pin": "445-75-495"
+    },
+    "accessories": [],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8581,
+            "platform": "config"
+        },
+        {
+            "name": "Nest-Bridge",
+            "access_token": "b.14155502.FbVkKrk7iOpe3N7hb1sAbkBWTO5BHJ6BLjvs7Q5fD26wAAUzkpxDMh9xnuzMbsvWQKropQZ26aok24JJmXuKwHVQW6YiuFgo6VdGFpp0awsNGV0VNrnQhzui0jeN3rfxycZA94ECnYcj2Yd2_1592192643049",
+            "platform": "Nest"
+        },
+        {
+            "name": "Belkin WeMo",
+            "platform": "BelkinWeMo"
+        },
+        {
+            "tvs": [
+                {
+                    "name": "Family Room TV",
+                    "ip": "192.168.100.205",
+                    "soundoutput": "speaker",
+                    "tvsource": "tv:dvbs"
+                }
+            ],
+            "platform": "BraviaPlatform"
+        }
+    ]
+}
