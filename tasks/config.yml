@@ -1,0 +1,32 @@
+---
+###############################################################################
+################################# INSTALL #####################################
+###############################################################################
+
+
+# - debug: var=preexisting
+
+
+- name: Generating HB Config
+  template:
+    src: config.json.j2
+    dest: "{{container_prefix}}/etc/config.json"
+    mode: 0600
+    owner: "{{ container_user }}"
+    group: "{{ container_group }}"
+
+- name: Generating Auth Config
+  template:
+    src: auth.json.j2
+    dest: "{{container_prefix}}/etc/auth.json"
+    mode: 0600
+    owner: "{{ container_user }}"
+    group: "{{ container_group }}"
+
+- name: Generating Packages
+  template:
+    src: package.json.j2
+    dest: "{{container_prefix}}/etc/package.json"
+    mode: 0600
+    owner: "{{ container_user }}"
+    group: "{{ container_group }}"
