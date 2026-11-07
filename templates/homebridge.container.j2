@@ -1,0 +1,18 @@
+[Unit]
+Description=Homebridge Container
+After=network-online.target
+
+[Container]
+Image={{ image_name }}
+ContainerName={{ container_friendly_name }}
+EnvironmentFile={{ container_env_file }}
+Network=host
+Volume={{ container_prefix }}/etc/:/homebridge:Z
+Volume=/etc/letsencrypt/:/ssl/:ro,Z
+AutoUpdate=registry
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
