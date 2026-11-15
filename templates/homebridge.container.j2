@@ -12,7 +12,6 @@ EnvironmentFile={{ container_env_file }}
 Network=host
 Volume={{ container_prefix }}/etc/:/homebridge:Z
 Volume=/etc/letsencrypt/:/ssl/:ro,Z
-AutoUpdate=registry
 
 [Service]
 Restart=always
